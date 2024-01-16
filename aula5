@@ -1,0 +1,66 @@
+
+/*create database aula;*/
+use aula;
+drop table funcionarios;
+create table funcionarios(
+	id int primary key auto_increment,
+	nome varchar(50),
+    telefone varchar(15),
+    endereco varchar(50),
+    bairro varchar(20),
+    cep varchar(8),
+    salario double,
+    cidade varchar(50)
+);
+
+insert into funcionarios (nome, telefone, endereco, bairro, cep, salario, cidade) values("nome1", "telefone1", "endereco1", "nazare", "cep1", 1000.00, "belém");
+insert into funcionarios (nome, telefone, endereco, bairro, cep, salario, cidade) values("nome2", "telefone2", "endereco2", "são bras", "cep1", 2000.00, "cidade1");
+insert into funcionarios (nome, telefone, endereco, bairro, cep, salario, cidade) values("nome3", "telefone1", "endereco5", "sao bras", "cep4", 1500.00, "Belém");
+insert into funcionarios (nome, telefone, endereco, bairro, cep, salario, cidade) values("nome4", "telefone3", "endereco3", "umarizal", "cep5", 16000.00, "cidade1");
+insert into funcionarios (nome, telefone, endereco, bairro, cep, salario, cidade) values("nome5", "telefone4", "endereco4", "umarizal", "cep4", 5000.00, "cidade4");
+insert into funcionarios (nome, telefone, endereco, bairro, cep, salario, cidade) values("nome6", "telefone6", "endereco6", "bairro5", "cep6", 10000.00, "cidade2");
+insert into funcionarios (nome, telefone, endereco, bairro, cep, salario, cidade) values("nome8", "telefone5", "endereco7", "bairro4", "cep10", 9000.00, "cidade4");
+insert into funcionarios (nome, telefone, endereco, bairro, cep, salario, cidade) values("nome4", "telefone8", "endereco8", "nazare", "cep9", 600.00, "cidade5");
+insert into funcionarios (nome, telefone, endereco, bairro, cep, salario, cidade) values("nome7", "telefone9", "endereco10", "bairro2", "cep8", 7000.00, "cidade1");
+insert into funcionarios (nome, telefone, endereco, bairro, cep, salario, cidade) values("nome10", "telefone10", "endereco9", "bairro1", "cep7", 2000.00, "cidade1");
+
+/*
+
+-- consulta 1
+select nome, telefone, salario from funcionarios;
+
+-- consulta 2
+select * from funcionarios where salario > 3000;
+
+-- consulta 3
+select * from funcionarios where salario between 2000 and 4000;
+
+-- consulta 4
+select * from funcionarios where cidade = "Belém";
+
+-- consulta 5
+select * from funcionarios where bairro = "São bras" or salario > 2500;
+
+-- consulta 6
+select * from funcionarios where nome like "M%";
+
+-- consulta 7
+select * from funcionarios where nome like "%Z%";
+
+-- consulta 8
+select distinct bairro from funcionarios;
+
+-- consulta 9
+select * from funcionarios where id < 6 order by id desc;
+
+-- consulta 10
+select nome from funcionario order by salario desc;
+
+-- consulta 11
+select * from funcionarios where cicade =! "Belém" or salario < 3000 order by salario desc;
+
+*/
+
+-- consulta 12
+select max(salario) from funcionarios where bairro in("são bras", "umarizal", "nazare") order by salario desc limit 3;
+
