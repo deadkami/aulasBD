@@ -56,7 +56,7 @@ select * from funcionarios where id < 6 order by id desc;
 select nome from funcionario order by salario desc;
 
 -- consulta 11
-select * from funcionarios where cicade =! "Belém" or salario < 3000 order by salario desc;
+select * from funcionarios where cidade <> "Belém" or salario < 3000 order by salario desc;
 
 
 
