@@ -1,0 +1,27 @@
+select min(f.salario) as salario_minimo, avg(f.salario) as media_salario, max(f.salario) as salario_maximo, d.nome 
+from funcionarios as f join departamentos as d on f.departamento_id = d.id
+group by d.nome
+having d.nome = "compras";
+
+select count(*) as numero_de_funcionarios, d.nome 
+from funcionarios as f join departamentos as d on f.departamento_id = d.id
+group by d.nome
+having d.nome = "compras";
+
+select sum(f.salario) as salarios_totais, d.nome 
+from funcionarios as f join departamentos as d on f.departamento_id = d.id
+group by d.nome
+having d.nome = "diretoria";
+
+select count(*) as numero_de_funcionarios, d.nome 
+from funcionarios as f join departamentos as d on f.departamento_id = d.id
+group by d.nome;
+
+select sum(f.salario) as salarios_totais, d.nome 
+from funcionarios as f join departamentos as d on f.departamento_id = d.id
+group by d.nome;
+
+select sum(f.salario) as salarios_totais, d.nome 
+from funcionarios as f join departamentos as d on f.departamento_id = d.id
+group by d.nome
+having salarios_totais > 20000;
